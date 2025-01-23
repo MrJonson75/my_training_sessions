@@ -19,6 +19,7 @@
 
         (3.4, -56.7, 8, 11, -5, 2)
 '''
+from itertools import count
 
 # t = (3.4, -56.7)
 #
@@ -142,3 +143,37 @@
 # tuple_in = tuple(map(int, input().split()))
 # tuple_out = tuple(dict.fromkeys(tuple_in))
 # print(*tuple_out)
+
+
+
+
+
+
+'''
+        Подвиг 8. 
+        
+        На вход программе подаются целые числа, записанные в одну строку через пробел. 
+        Необходимо их прочитать и сохранить в кортеже. 
+        Затем, в кортеже найти и вывести в одну строчку через пробел (по порядку) 
+        все индексы неуникальных (повторяющихся) значений.
+
+        
+        Sample Input:
+        
+        5 4 -3 2 4 5 10 11
+        Sample Output:
+        
+        0 1 4 5
+'''
+
+# tuple_in = tuple(map(int, input().split()))
+# lst_out =[]
+# for i, v in enumerate(tuple_in):
+#     if tuple_in.count(v) > 1:
+#         lst_out.append(i)
+#
+# print(*lst_out)
+
+# Вариант 2
+# tuple_in = tuple(map(int, input().split()))
+# print(*[i for i, v in enumerate(tuple_in) if tuple_in.count(v) > 1])
