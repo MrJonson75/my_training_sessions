@@ -19,13 +19,13 @@
 
         (3.4, -56.7, 8, 11, -5, 2)
 '''
-from itertools import count
 
-# t = (3.4, -56.7)
-#
-# t += tuple(map(int, input().split()))
-#
-# print(t)
+
+t = (3.4, -56.7)
+
+t += tuple(map(int, input().split()))
+
+print(t)
 
 
 
@@ -52,10 +52,10 @@ from itertools import count
         Уфа Казань Самара Москва
 '''
 
-# tuple_in = tuple(input().split())
-# if "Москва" not in tuple_in:
-#     tuple_in += ("Москва",)
-# print(*tuple_in)
+tuple_in = tuple(input().split())
+if "Москва" not in tuple_in:
+    tuple_in += ("Москва",)
+print(*tuple_in)
 
 
 
@@ -82,7 +82,7 @@ from itertools import count
 '''
 
 
-# print(*tuple([i for i in tuple(input().split()) if i != "Ульяновск"]))
+print(*tuple([i for i in tuple(input().split()) if i != "Ульяновск"]))
 
 
 
@@ -105,7 +105,7 @@ from itertools import count
         варвара василиса василий
 '''
 
-# print(*[i for i in tuple(input().lower().split()) if "ва" in i])
+print(*[i for i in tuple(input().lower().split()) if "ва" in i])
 
 
 
@@ -131,18 +131,18 @@ from itertools import count
         
         8 11 -5 -2
 '''
-# tuple_in = tuple(map(int, input().split()))
-# tuple_out = ()
-# for i in tuple_in:
-#     if i not in tuple_out:
-#         tuple_out = tuple_out + (i,)
-# print(*tuple_out)
-#
-# # Вариант 2
-#
-# tuple_in = tuple(map(int, input().split()))
-# tuple_out = tuple(dict.fromkeys(tuple_in))
-# print(*tuple_out)
+tuple_in = tuple(map(int, input().split()))
+tuple_out = ()
+for i in tuple_in:
+    if i not in tuple_out:
+        tuple_out = tuple_out + (i,)
+print(*tuple_out)
+
+# Вариант 2
+
+tuple_in = tuple(map(int, input().split()))
+tuple_out = tuple(dict.fromkeys(tuple_in))
+print(*tuple_out)
 
 
 
@@ -166,14 +166,111 @@ from itertools import count
         0 1 4 5
 '''
 
-# tuple_in = tuple(map(int, input().split()))
-# lst_out =[]
-# for i, v in enumerate(tuple_in):
-#     if tuple_in.count(v) > 1:
-#         lst_out.append(i)
-#
-# print(*lst_out)
+tuple_in = tuple(map(int, input().split()))
+lst_out =[]
+for i, v in enumerate(tuple_in):
+    if tuple_in.count(v) > 1:
+        lst_out.append(i)
+
+print(*lst_out)
 
 # Вариант 2
-# tuple_in = tuple(map(int, input().split()))
-# print(*[i for i, v in enumerate(tuple_in) if tuple_in.count(v) > 1])
+tuple_in = tuple(map(int, input().split()))
+print(*[i for i, v in enumerate(tuple_in) if tuple_in.count(v) > 1])
+
+
+
+
+
+'''
+        Подвиг 9. Объявите в программе следующий двумерный кортеж, размером 5 x 5 элементов:
+
+        t = ((1, 0, 0, 0, 0),
+             (0, 1, 0, 0, 0),
+             (0, 0, 1, 0, 0),
+             (0, 0, 0, 1, 0),
+             (0, 0, 0, 0, 1))
+             
+        На вход программе подается натуральное число N (N < 5). 
+        Необходимо на основе кортежа t сформировать новый аналогичный кортеж t2 размером N x N 
+        элементов путем отбрасывания последних строк и столбцов. 
+        
+        Результат выведите на экран в виде таблицы чисел.
+        
+        P.S. Обратите внимание, что в при выводе таблицы в конце строк не должно быть пробелов.
+        
+        Sample Input:
+        
+        3
+        Sample Output:
+        
+        1 0 0
+        0 1 0
+        0 0 1
+'''
+
+t = ((1, 0, 0, 0, 0),
+     (0, 1, 0, 0, 0),
+     (0, 0, 1, 0, 0),
+     (0, 0, 0, 1, 0),
+     (0, 0, 0, 0, 1))
+
+n = int(input())
+t2 = ()
+for i in range(n):
+    t2 += ((t[i][0:n]),)
+for i in t2:
+    print(*i)
+
+# вариант 2
+t = ((1, 0, 0, 0, 0),
+     (0, 1, 0, 0, 0),
+     (0, 0, 1, 0, 0),
+     (0, 0, 0, 1, 0),
+     (0, 0, 0, 0, 1))
+
+n = int(input())
+tuple(print(*t[i][0:n]) for i in range(n))
+
+
+
+
+
+'''
+        Подвиг 10. На вход программе подаются строки (пункты меню), каждая с новой строки, в формате:
+
+        название_1 URL-адрес_1
+        название_2 URL-адрес_2
+        ...
+        название_N URL-адрес_N
+        
+        В программе уже реализовано чтение этих строк и сохранение их в списке:
+        
+        lst_in = list(map(str.strip, sys.stdin.readlines()))
+        Необходимо преобразовать список lst_in так, чтобы получился кортеж menu следующего вида:
+        
+        ((название_1, URL-адрес_1), (название_2, URL-адрес_2), ... (название_N, URL-адрес_N))
+        
+        Полученный кортеж вывести на экран командой:
+        
+        print(menu)
+        
+        Sample Input:
+        
+        Главная home
+        Python learn-python
+        Java learn-java
+        PHP learn-php
+        Sample Output:
+        
+        (('Главная', 'home'), ('Python', 'learn-python'), ('Java', 'learn-java'), ('PHP', 'learn-php'))
+'''
+
+lst_in =[
+    "Главная home",
+    "Python learn-python",
+    "Java learn-java",
+    "PHP learn-php"
+]
+menu = tuple([tuple(i.split()) for i in lst_in])
+print(menu)
