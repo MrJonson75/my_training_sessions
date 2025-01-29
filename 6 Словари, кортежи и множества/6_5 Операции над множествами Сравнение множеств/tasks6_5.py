@@ -25,18 +25,18 @@
         -2 11 15
 '''
 
-# tuple_in1 = tuple(map(int, input().split()))
-# tuple_in2 = tuple(map(int, input().split()))
-#
-# s = set(tuple_in1) & set(tuple_in2)
-# print(*sorted(s))
-#
-# # Вариант 2
-# print(*sorted(set(tuple(map(int, input().split()))) & set(tuple(map(int, input().split())))))
-#
-# # Вариант 3
-#
-# print(*sorted(set(input().split()) & set(input().split()), key=int))
+tuple_in1 = tuple(map(int, input().split()))
+tuple_in2 = tuple(map(int, input().split()))
+
+s = set(tuple_in1) & set(tuple_in2)
+print(*sorted(s))
+
+# Вариант 2
+print(*sorted(set(tuple(map(int, input().split()))) & set(tuple(map(int, input().split())))))
+
+# Вариант 3
+
+print(*sorted(set(input().split()) & set(input().split()), key=int))
 
 
 
@@ -63,18 +63,18 @@
         -3 5 8
 '''
 
-# # tuple_in1 = tuple(map(int, input().split()))
-# # tuple_in2 = tuple(map(int, input().split()))
-#
-# tuple_in1 = (8, 5, 3, 5, -3, 1)
-# tuple_in2 = (1, 2, 3, 4)
-#
-# s = set(tuple_in1) - set(tuple_in2)
-# print(*sorted(s))
-#
-# # Вариант 2
-#
-# print(*sorted(set(input().split()) - set(input().split()), key=int))
+# tuple_in1 = tuple(map(int, input().split()))
+# tuple_in2 = tuple(map(int, input().split()))
+
+tuple_in1 = (8, 5, 3, 5, -3, 1)
+tuple_in2 = (1, 2, 3, 4)
+
+s = set(tuple_in1) - set(tuple_in2)
+print(*sorted(s))
+
+# Вариант 2
+
+print(*sorted(set(input().split()) - set(input().split()), key=int))
 
 
 
@@ -102,18 +102,18 @@
         1 2 3 6 7 8
 '''
 
-# # tuple_in1 = tuple(map(int, input().split()))
-# # tuple_in2 = tuple(map(int, input().split()))
-#
-# tuple_in1 = (1, 2, 3, 4, 5)
-# tuple_in2 = (4, 5, 6, 7, 8)
-#
-# s = set(tuple_in1) ^ set(tuple_in2)
-# print(*sorted(s))
-#
-# # Вариант 2
-#
-# print(*sorted(set(input().split()) ^ set(input().split()), key=int))
+# tuple_in1 = tuple(map(int, input().split()))
+# tuple_in2 = tuple(map(int, input().split()))
+
+tuple_in1 = (1, 2, 3, 4, 5)
+tuple_in2 = (4, 5, 6, 7, 8)
+
+s = set(tuple_in1) ^ set(tuple_in2)
+print(*sorted(s))
+
+# Вариант 2
+
+print(*sorted(set(input().split()) ^ set(input().split()), key=int))
 
 
 
@@ -138,7 +138,7 @@
         ДА
 '''
 
-# print(["НЕТ", "ДА"][set(input().split()) == set(input().split())])
+print(["НЕТ", "ДА"][set(input().split()) == set(input().split())])
 
 
 
@@ -166,8 +166,8 @@
 '''
 
 
-# s = set(map(int, input().split()))
-# print(["ДОПУЩЕН", "НЕ ДОПУЩЕН"][{2} < s or {1} < s])
+s = set(map(int, input().split()))
+print(["ДОПУЩЕН", "НЕ ДОПУЩЕН"][{2} < s or {1} < s])
 
 
 
@@ -191,9 +191,9 @@
         
         ДА
 '''
-# citi1 = set(input().split())
-# citi2 = set(input().split())
-# print(["НЕТ", "ДА"][citi1 & citi2 == citi1])
+citi1 = set(input().split())
+citi2 = set(input().split())
+print(["НЕТ", "ДА"][citi1 & citi2 == citi1])
 
 
 
@@ -215,17 +215,17 @@
         ДА
 '''
 
-# n = int(input())
-# i = 2
-# lst = []
-# while n > 1:
-#     if n % i == 0:
-#         n /= i
-#         lst.append(i)
-#     else:
-#         i += 1
-# print(lst)
-# print(["НЕТ", "ДА"][set(lst) >= {2, 3, 5}])
-#
-# # Вариант 2
-# print('НЕТ' if int(input()) % 30 else 'ДА')
+n = int(input())
+i = 2
+lst = []
+while n > 1:
+    if n % i == 0:
+        n /= i
+        lst.append(i)
+    else:
+        i += 1
+print(lst)
+print(["НЕТ", "ДА"][set(lst) >= {2, 3, 5}])
+
+# Вариант 2
+print('НЕТ' if int(input()) % 30 else 'ДА')
