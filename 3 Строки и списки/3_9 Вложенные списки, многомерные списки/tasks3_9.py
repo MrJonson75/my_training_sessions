@@ -89,7 +89,7 @@ mat = [list(map(str, input().split())),
 
 
 print(f"{mat[0][3]} {mat[1][3]} {mat[2][3]}")
-          Тоже самое
+          # Тоже самое
 print(input().split()[-1], input().split()[-1], input().split()[-1])
 
 
