@@ -150,7 +150,10 @@ lst_in = ['смартфон:120000', 'яблоко:2', 'сумка:560', 'брю
 
 d = dict([[int(i.split(':')[1]), i.split(':')[0]] for i in lst_in])
 
+
 def sort(dic):
     return [dic[i] for i in sorted(dic.keys())][:3]
 
+
 print(*sort(d))
+
