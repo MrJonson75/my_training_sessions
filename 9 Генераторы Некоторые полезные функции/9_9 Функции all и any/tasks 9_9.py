@@ -35,3 +35,4 @@ print(all(map(lambda x: x % 2 == 0, map(int, s.split()))))
         
         True
 '''
+
