@@ -106,7 +106,7 @@
         0
 '''
 
-# s = '1 1 3 2 2 1 1 1 1'
+s = '1 1 3 2 2 1 1 1 1'
 
 # lst = list(map(int, s.split()))
 # print(len([lst[i] for i in range(1, len(lst)) if lst[i] > lst[i - 1]]))
